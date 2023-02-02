@@ -25,7 +25,8 @@ fun NavGraphBuilder.homeNavGraph(navController: NavHostController) {
         composable(route = HomeScreens.ScreenB.route) {
             BScreen(
                 onClick = {
-                    navController.navigate(HomeScreens.ScreenA.route)
+                    navController.popBackStack()
+                    navController.navigate(Graphs.AUTHENTICATION)
                 }
             )
         }

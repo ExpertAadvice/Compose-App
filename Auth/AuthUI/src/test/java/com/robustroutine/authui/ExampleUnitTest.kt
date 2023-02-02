@@ -1,4 +1,4 @@
-package com.robustroutine.auth_ui
+package com.robustroutine.authui
 
 import org.junit.Test
 
