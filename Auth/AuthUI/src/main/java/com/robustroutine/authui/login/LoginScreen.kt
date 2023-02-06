@@ -24,6 +24,7 @@ import com.robustroutine.authui.components.ButtonComponent
 import com.robustroutine.authui.components.EmailTextField
 import com.robustroutine.authui.components.LogoCard
 import com.robustroutine.authui.components.PasswordTextField
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
 @OptIn(ExperimentalComposeUiApi::class)
@@ -33,11 +34,11 @@ fun LoginScreen(
     onLoginClick: () -> Unit,
     onForgetPassClick:() -> Unit,
     onRegisterClick:() -> Unit,
-  //  viewModel: LoginViewModel = hiltViewModel()
+    viewModel: LoginViewModel = hiltViewModel()
 ) {
 
-//    val usernameState = viewModel.username.value
-//    val passwordState = viewModel.password.value
+    val usernameState = viewModel.username.value
+    val passwordState = viewModel.password.value
 
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
@@ -45,32 +46,23 @@ fun LoginScreen(
     val keyboardController = LocalSoftwareKeyboardController.current
 
     LaunchedEffect(key1 = true) {
-//        viewModel.eventFlow.collectLatest { event ->
-//            when (event) {
-//                is LoginViewModel.UiEvent.ShowSnackBar -> {
-//                    scaffoldState.snackbarHostState.showSnackbar(
-//                        message = event.message
-//                    )
-//                }
-//                is LoginViewModel.UiEvent.LoginButtonEvent -> {
-//                    onLoginClick()
-//                }
-//            }
-//        }
+        viewModel.eventFlow.collectLatest { event ->
+            when (event) {
+                is LoginViewModel.UiEvent.ShowSnackBar -> {
+                    scaffoldState.snackbarHostState.showSnackbar(
+                        message = event.message
+                    )
+                }
+                is LoginViewModel.UiEvent.LoginButtonEvent -> {
+                    onLoginClick()
+                }
+            }
+        }
     }
 
     Scaffold(
         scaffoldState = scaffoldState
     ) {
-        Text(
-            modifier = Modifier.clickable { onLoginClick() },
-            text = "Login",
-            fontSize = MaterialTheme.typography.h3.fontSize,
-            fontWeight = FontWeight.Bold
-        )
-    }
-
-/*{
 
         val constraints = ConstraintSet {
             val logo = createRefFor("logo")
@@ -179,5 +171,5 @@ fun LoginScreen(
                 }
             )
         }
-    }*/
+    }
 }

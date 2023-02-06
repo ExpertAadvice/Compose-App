@@ -3,8 +3,7 @@ package com.robustroutine.composeapp.navigation
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import com.robustroutine.composeapp.home_screen.HomeScreen
+import com.robustroutine.authui.navigation.authNavGraph
 
 @Composable
 fun NavigationGraph(navController: NavHostController) {
@@ -14,6 +13,7 @@ fun NavigationGraph(navController: NavHostController) {
         startDestination = Graphs.HOME
     ) {
         homeNavGraph(navController = navController)
+        authNavGraph(navController = navController)
     }
 }
 

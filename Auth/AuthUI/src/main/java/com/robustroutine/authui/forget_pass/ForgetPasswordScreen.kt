@@ -26,7 +26,7 @@ import kotlinx.coroutines.flow.collectLatest
 @Composable
 fun ForgetPasswordScreen(
     onButtonClicked: () -> Unit,
-  //  viewModel: ForgetPassViewModel = hiltViewModel()
+    viewModel: ForgetPassViewModel = hiltViewModel()
 ) {
     //    val state = viewModel.state.value
     val scaffoldState = rememberScaffoldState()
