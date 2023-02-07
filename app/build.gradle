@@ -51,7 +51,9 @@ android {
 
 dependencies {
 
+    implementation project(":Common")
     implementation project(":Auth:AuthUI")
+    implementation project(":Basics")
 
     implementation "androidx.core:core-ktx:$core_ktx"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_ktx"

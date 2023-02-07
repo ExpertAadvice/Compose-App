@@ -7,6 +7,7 @@ import androidx.navigation.navigation
 import com.robustroutine.authui.forget_pass.ForgetPasswordScreen
 import com.robustroutine.authui.login.LoginScreen
 import com.robustroutine.authui.register.RegisterScreen
+import com.robustroutine.common.graph.Graphs
 
 fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
     navigation(
@@ -49,10 +50,4 @@ sealed class AuthScreen(val route: String) {
     object Login : AuthScreen(route = "LOGIN")
     object Register : AuthScreen(route = "SIGN_UP")
     object ForgotPass : AuthScreen(route = "FORGOT")
-}
-
-object Graphs {
-    const val ROOT = "ROOT_GRAPH"
-    const val AUTHENTICATION = "AUTH_GRAPH"
-    const val HOME = "HOME_GRAPH"
 }

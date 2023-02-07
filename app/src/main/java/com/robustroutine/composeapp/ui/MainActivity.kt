@@ -1,4 +1,4 @@
-package com.robustroutine.composeapp.splash_screen
+package com.robustroutine.composeapp.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.robustroutine.authui.navigation.authNavGraph
+import com.robustroutine.basics.navigation.basicNavGraph
+import com.robustroutine.common.graph.Graphs
 
 @Composable
 fun NavigationGraph(navController: NavHostController) {
@@ -14,11 +16,6 @@ fun NavigationGraph(navController: NavHostController) {
     ) {
         homeNavGraph(navController = navController)
         authNavGraph(navController = navController)
+        basicNavGraph(navController = navController)
     }
-}
-
-object Graphs {
-    const val ROOT = "ROOT_GRAPH"
-    const val AUTHENTICATION = "AUTH_GRAPH"
-    const val HOME = "HOME_GRAPH"
 }
