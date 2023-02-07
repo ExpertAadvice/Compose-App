@@ -15,8 +15,16 @@ fun NavGraphBuilder.homeNavGraph(navController: NavHostController) {
         composable(route = Screens.HomeScreen.route) {
             HomeScreen(
                 onClick = {
-                    navController.popBackStack()
-                    navController.navigate(Graphs.AUTHENTICATION)
+                    when (it) {
+                        "2" -> {
+                            navController.popBackStack()
+                            navController.navigate(Graphs.AUTHENTICATION)
+                        }
+                        else -> {
+
+                        }
+                    }
+
                 }
             )
         }

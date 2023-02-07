@@ -1,6 +1,21 @@
 buildscript {
     ext {
         compose_ui_version = '1.3.3'
+
+        core_ktx = '1.9.0'
+        lifecycle_ktx = '2.5.1'
+        compose_activity = '1.6.1'
+        compose_material = '1.3.1'
+        testImplementation_junit = '4.13.2'
+        androidTestImplementation_junit = '1.1.5'
+        androidTestImplementation_espresso = '3.5.1'
+
+        compose_navigation = '2.6.0-alpha04'
+        hilt_android = '2.44'
+        hilt_compiler = '2.44'
+        compose_hilt_navigation = '1.1.0-alpha01'
+        coroutine = '1.6.4'
+        constrain_layout = '1.0.1'
     }
     dependencies {
         classpath "com.google.dagger:hilt-android-gradle-plugin:2.44"

@@ -52,7 +52,7 @@ sealed class AuthScreen(val route: String) {
 }
 
 object Graphs {
-    const val ROOT = "root_graph"
-    const val AUTHENTICATION = "auth_graph"
-    const val HOME = "home_graph"
+    const val ROOT = "ROOT_GRAPH"
+    const val AUTHENTICATION = "AUTH_GRAPH"
+    const val HOME = "HOME_GRAPH"
 }
