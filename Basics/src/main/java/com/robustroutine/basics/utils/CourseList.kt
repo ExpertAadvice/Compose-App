@@ -7,6 +7,7 @@ object CourseList {
 
         list.add("Tab Layout")
         list.add("Navigation Drawer")
+        list.add("Permission Handling")
 
         return list
     }

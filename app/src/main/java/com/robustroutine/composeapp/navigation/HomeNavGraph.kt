@@ -6,14 +6,22 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.robustroutine.common.graph.Graphs
 import com.robustroutine.composeapp.home_screen.HomeScreen
+import com.robustroutine.composeapp.splash_screen.SplashScreen
 import com.robustroutine.composeapp.utils.TopicList
 
 fun NavGraphBuilder.homeNavGraph(navController: NavHostController) {
     navigation(
         route = Graphs.HOME,
-        startDestination = Screens.HomeScreen.route
+        startDestination = Screens.SplashScreen.route
     )
     {
+        composable(route = Screens.SplashScreen.route) {
+            SplashScreen(
+                onTimeOut = {
+                    navController.navigate(Screens.HomeScreen.route)
+                }
+            )
+        }
         composable(route = Screens.HomeScreen.route) {
             HomeScreen(
                 onClick = {
@@ -39,6 +47,7 @@ fun NavGraphBuilder.homeNavGraph(navController: NavHostController) {
 }
 
 sealed class Screens(val route: String) {
+    object SplashScreen : Screens("SPLASH")
     object HomeScreen : Screens("HOME")
 }
 
