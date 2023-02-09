@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.robustroutine.basics.screens.home.BasicScreen
 import com.robustroutine.basics.screens.permissionhandling.PermissionScreen
+import com.robustroutine.basics.screens.previewcomponents.PreviewScreen
 import com.robustroutine.basics.screens.sidenavdrawer.NavigationDrawerScreen
 import com.robustroutine.basics.screens.tabviewpager.TableLayoutScreen
 import com.robustroutine.basics.utils.CourseList
@@ -29,6 +30,9 @@ fun NavGraphBuilder.basicNavGraph(navController: NavHostController) {
                         }
                         list[2] -> {
                             navController.navigate(BasicScreens.PermissionHandler.route)
+                        }
+                        list[3] -> {
+                            navController.navigate(BasicScreens.Preview.route)
                         }
                         else -> {
                             navController.popBackStack()
@@ -59,6 +63,13 @@ fun NavGraphBuilder.basicNavGraph(navController: NavHostController) {
                 }
             )
         }
+        composable(route = BasicScreens.Preview.route) {
+            PreviewScreen(
+                onBackPress = {
+                    navController.navigate(BasicScreens.Basic.route)
+                }
+            )
+        }
     }
 }
 
@@ -67,4 +78,5 @@ sealed class BasicScreens(val route: String) {
     object TableLayout : BasicScreens(route = "TAB")
     object NavigationDrawer : BasicScreens(route = "DRAWER")
     object PermissionHandler : BasicScreens(route = "PERMISSION")
+    object Preview : BasicScreens(route = "PREVIEW")
 }
