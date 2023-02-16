@@ -5,7 +5,7 @@ object TopicList {
     fun getList() : ArrayList<String> {
         val list = ArrayList<String>()
 
-        list.add("AUTH")
+        list.add("Authentication")
         list.add("Compose Basics")
 
         return list
