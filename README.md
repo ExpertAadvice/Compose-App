@@ -1,5 +1,6 @@
 # Compose-App
 
+```
 Things you must remember while transfer xml projects to Compose =>
 
 Add these Files in app-level build.gradle -> {
@@ -72,4 +73,5 @@ XML :-    <androidx.compose.ui.platform.ComposeView
                 app:layout_constraintTop_toTopOf="parent" />
 
 ====================================================================================================
+```
     
